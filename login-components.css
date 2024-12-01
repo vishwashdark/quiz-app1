@@ -1,0 +1,135 @@
+/* Global Reset and Box Model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Setup */
+body {
+    background: linear-gradient(135deg, #01020a, #8f94fb); /* Futuristic gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Login Container */
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px 60px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Title Styles */
+h1 {
+    font-size: 38px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+/* Input Container */
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 16px 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 6px rgba(30, 144, 255, 0.8);
+}
+
+/* Input Border Animation */
+.input-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1e90ff;
+    transition: width 0.3s ease;
+}
+
+input:focus + .input-border {
+    width: 100%;
+}
+
+/* Button Styles */
+button {
+    padding: 16px;
+    width: 100%;
+    background-color: #1e90ff;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0059b2;
+    transform: translateY(-4px);
+}
+
+button:active {
+    transform: translateY(4px);
+}
+
+/* Animation for Login Container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+    .login-container {
+        padding: 30px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="quiz-components.css">
+    <script>
+        // Check if the student is logged in when the page loads
+        if (!localStorage.getItem('studentId')) {
+            window.location.href = 'login.html'; // Redirect to login if not authenticated
+        }
+    </script>    
+</head>
+<body>
+    <!-- Add this video element for webcam -->
+    <div class="video-container">
+        <video id="video" autoplay muted></video>
+    </div>
+
+    <div class="quiz-container">
+        <h1>Quiz</h1>
+        <form id="quiz-form">
+            <div id="questions"></div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
